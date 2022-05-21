@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="login-container">
+                <form [formGroup]="loginFormGroup" (ngSubmit)="submitForm()">
+                    <div class="row col">
+                        <h1 class="h3 mb-3 fw-normal">Login</h1>
+                    </div>
+                    <div class="row col">
+                        <mat-form-field class="example-form-field" appearance="standard">
+                            <mat-label>Email</mat-label>
+                            <input  matInput type="email" formControlName="email">
+                            <mat-error *ngIf="emailCtrl.invalid">{{getEmailErrorMessage()}}</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="row col">
+                        <mat-form-field class="example-form-field" appearance="standard">
+                            <mat-label>Password</mat-label>
+                            <input matInput type="password" formControlName="password">
+                            <mat-error *ngIf="passwordCtrl.invalid">{{getPasswordErrorMessage()}}</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="row col">
+                        <label>
+                            <input type="checkbox" value="remember-me"> Remember me
+                        </label>
+                    </div>
+                    <div class="row col">
+                        <button style="float:right" mat-raised-button color="primary">Submit</button>
+                    </div>
+                    <div class="errorMsgHolder">
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>  
+</div>
